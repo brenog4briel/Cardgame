@@ -1,0 +1,11 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../../assets/Historia/backgroundHistoria.jpg");
+    
+    display:flex;
+    flex-direction: column;
+
+    
+}
