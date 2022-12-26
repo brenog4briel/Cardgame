@@ -1,18 +1,17 @@
 import styles from "./HistoriaMain.module.css"
-import {useState,useEffect} from "react"
+import {useState} from "react"
 
 const baseURL = "http://localhost:8082";
 
-var option1,option2,option3,option4;
+var option1,option2,option3,option4, currentID;
 
 function HistoriaMain() {
 
     const [isOpen,setIsOpen] = useState(false);
+    const [correct,setCorrect] = useState();
+    const [pontuacao,setPontuacao] = useState(0);
 
-    const [c1Respondido,setC1Respondido] = useState(false)
-    const [c2Respondido,setC2Respondido] = useState(false)
-    const [c3Respondido,setC3Respondido] = useState(false)
-
+    //Função que consome a API
     function consumindoAPI (id) {
         fetch(`${baseURL}/questions`)
     .then(response => response.json())
@@ -20,13 +19,18 @@ function HistoriaMain() {
     .catch(error => console.log(error))
     }
 
+    //Função que atribui as perguntas aos cards
     const setQuestions = (data,id) => {
         
+        currentID = id;
+
         document.querySelector(`#tituloPergunta`).innerHTML = data[id].titulo;
 
         orderOptions(data[id]);
+
     }
 
+    //Função que faz o mapeamento das opções
     function orderOptions(data) {
 
         let order = generateOrder();
@@ -50,6 +54,7 @@ function HistoriaMain() {
         
     }
 
+    //Função responsável por gerar a ordem em que as opções serão exibidas
     function generateOrder() {
         
         let numbers = [];
@@ -67,104 +72,167 @@ function HistoriaMain() {
         return numbers;
     }
 
-
-
-    function isCorrectOption() {
+    //Função que mostra ao usuário se ele acertou a questão e o impossibilita de escolher um card que já foi
+    //respondido
+    function isCorrectOption(id) {
 
         option1.parentNode.style.border = "5px solid red";
         option2.parentNode.style.border = "5px solid red";
         option3.parentNode.style.border = "5px solid red";
         option4.parentNode.style.border = "5px solid green";
 
+        document.getElementById(`card${id}`).style.backgroundImage = `url(${require('../../assets/cardRespondido.png')})`;
+
+        document.getElementById(`card${id}`).style.pointerEvents = "none";
+        
     }
 
-    
     return (
     <main className = {styles.container}>
 
             
-        {isOpen === false && <ul className = {styles.list}> 
-            <li id = "card1" className = {styles.listItem}  onClick = {c1Respondido ? () => window.alert("Este card já foi respondido!") : () => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card1").id.substring(document.getElementById("card1").id.length - 1))}}>
+        <ul className = {styles.list}> 
+            <li id = "card1" className = {styles.listItem} 
+
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card1").id.substring(document.getElementById("card1").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card2" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card2").id.substring(document.getElementById("card2").id.length - 1))}}>
+            <li id = "card2" className = {styles.listItem}  
+
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card2").id.substring(document.getElementById("card2").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card3" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card3").id.substring(document.getElementById("card3").id.length - 1))}}>
+            <li id = "card3" className = {styles.listItem} 
+
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card3").id.substring(document.getElementById("card3").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card4" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card4").id.substring(document.getElementById("card4").id.length - 1))}}>
+            <li id = "card4" className = {styles.listItem}  
+
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card4").id.substring(document.getElementById("card4").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card5" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card5").id.substring(document.getElementById("card5").id.length - 1))}}>
+            <li id = "card5" className = {styles.listItem}  
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card5").id.substring(document.getElementById("card5").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card6" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card6").id.substring(document.getElementById("card6").id.length - 1))}}>
+            <li id = "card6" className = {styles.listItem}  
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card6").id.substring(document.getElementById("card6").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card7" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card7").id.substring(document.getElementById("card7").id.length - 1))}}>
+            <li id = "card7" className = {styles.listItem}  
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card7").id.substring(document.getElementById("card7").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card8" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card8").id.substring(document.getElementById("card8").id.length - 1))}}>
+            <li id = "card8" className = {styles.listItem}  
+
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card8").id.substring(document.getElementById("card8").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card9" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card9").id.substring(document.getElementById("card9").id.length - 1))}}>
+            <li id = "card9" className = {styles.listItem}  
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card9").id.substring(document.getElementById("card9").id.length - 1))}}>
                 
             </li>
 
-            <li id = "card10" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card10").id.substring(parseInt(document.getElementById("card10").id.length - 2),parseInt(document.getElementById("card10").id.length)))}}>
+            <li id = "card10" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card10").id.substring(parseInt(document.getElementById("card10").id.length - 2),parseInt(document.getElementById("card10").id.length)))}}>
                 
             </li>
 
-            <li id = "card11" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card11").id.substring(parseInt(document.getElementById("card11").id.length - 2),parseInt(document.getElementById("card11").id.length)))}}>
+            <li id = "card11" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card11").id.substring(parseInt(document.getElementById("card11").id.length - 2),parseInt(document.getElementById("card11").id.length)))}}>
                 
             </li>
 
-            <li id = "card12" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card12").id.substring(parseInt(document.getElementById("card12").id.length - 2),parseInt(document.getElementById("card12").id.length)))}}>
+            <li id = "card12" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card12").id.substring(parseInt(document.getElementById("card12").id.length - 2),parseInt(document.getElementById("card12").id.length)))}}>
                 
             </li>
 
-            <li id = "card13" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card13").id.substring(parseInt(document.getElementById("card13").id.length - 2),parseInt(document.getElementById("card13").id.length)))}}>
+            <li id = "card13" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card13").id.substring(parseInt(document.getElementById("card13").id.length - 2),parseInt(document.getElementById("card13").id.length)))}}>
                 
             </li>
 
-            <li id = "card14" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card14").id.substring(parseInt(document.getElementById("card14").id.length - 2),parseInt(document.getElementById("card14").id.length)))}}>
+            <li id = "card14" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card14").id.substring(parseInt(document.getElementById("card14").id.length - 2),parseInt(document.getElementById("card14").id.length)))}}>
                 
             </li>
 
-            <li id = "card15" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card15").id.substring(parseInt(document.getElementById("card15").id.length - 2),parseInt(document.getElementById("card15").id.length)))}}>
+            <li id = "card15" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card15").id.substring(parseInt(document.getElementById("card15").id.length - 2),parseInt(document.getElementById("card15").id.length)))}}>
                 
             </li>
 
-            <li id = "card16" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card16").id.substring(parseInt(document.getElementById("card16").id.length - 2),parseInt(document.getElementById("card16").id.length)))}}>
+            <li id = "card16" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card16").id.substring(parseInt(document.getElementById("card16").id.length - 2),parseInt(document.getElementById("card16").id.length)))}}>
                 
             </li>
 
-            <li id = "card17" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card17").id.substring(parseInt(document.getElementById("card17").id.length - 2),parseInt(document.getElementById("card17").id.length)))}}>
+            <li id = "card17" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card17").id.substring(parseInt(document.getElementById("card17").id.length - 2),parseInt(document.getElementById("card17").id.length)))}}>
                 
             </li>
 
-            <li id = "card18" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card18").id.substring(parseInt(document.getElementById("card18").id.length - 2),parseInt(document.getElementById("card18").id.length)))}}>
+            <li id = "card18" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card18").id.substring(parseInt(document.getElementById("card18").id.length - 2),parseInt(document.getElementById("card18").id.length)))}}>
                 
             </li>
 
-            <li id = "card19" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card19").id.substring(parseInt(document.getElementById("card19").id.length - 2),parseInt(document.getElementById("card19").id.length)))}}>
+            <li id = "card19" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card19").id.substring(parseInt(document.getElementById("card19").id.length - 2),parseInt(document.getElementById("card19").id.length)))}}>
                 
             </li>
             
-            <li id = "card20" className = {styles.listItem} onClick = {() => {setIsOpen(!isOpen); consumindoAPI(document.getElementById("card20").id.substring(parseInt(document.getElementById("card20").id.length - 2),parseInt(document.getElementById("card20").id.length)))}}>
+            <li id = "card20" className = {styles.listItem} 
+            
+            onClick = {() => {setIsOpen(!isOpen); 
+            consumindoAPI(document.getElementById("card20").id.substring(parseInt(document.getElementById("card20").id.length - 2),parseInt(document.getElementById("card20").id.length)))}}>
                 
             </li>
             
-            </ul>}
+            </ul>
 
         {isOpen && (
 
@@ -183,19 +251,19 @@ function HistoriaMain() {
                     
 
                     <div className = {styles.containerOptions}>
-                        <div className = {styles.options} onClick = {() => {isCorrectOption(); setC1Respondido(true)}}>
+                        <div className = {styles.options} onClick = {() => {isCorrectOption(currentID)}}>
                             <p className = {styles.optionsText} id = "option1"></p>
                         </div>
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption()}>
+                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
                             <p className = {styles.optionsText} id = "option2"></p>
                         </div>  
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption()}>
+                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
                             <p className = {styles.optionsText} id = "option3"></p>
                         </div>
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption()}>
+                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
                             <p className = {styles.optionsText} id = "option4"></p>
                         </div>
                     </div>
