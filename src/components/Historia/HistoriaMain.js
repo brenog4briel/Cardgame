@@ -2,15 +2,12 @@ import styles from "./HistoriaMain.module.css"
 import {useState} from "react"
 
 const baseURL = "http://localhost:8082";
-
-var option1,option2,option3,option4, currentID;
+var valueOption1,valueOption2,valueOption3,valueOption4, currentID;
 
 function HistoriaMain() {
 
     const [isOpen,setIsOpen] = useState(false);
-    const [correct,setCorrect] = useState();
-    const [pontuacao,setPontuacao] = useState(0);
-
+    var [score,setScore] = useState(0);
     //Função que consome a API
     function consumindoAPI (id) {
         fetch(`${baseURL}/questions`)
@@ -18,6 +15,7 @@ function HistoriaMain() {
     .then(json => setQuestions(json,id))
     .catch(error => console.log(error))
     }
+
 
     //Função que atribui as perguntas aos cards
     const setQuestions = (data,id) => {
@@ -35,22 +33,22 @@ function HistoriaMain() {
 
         let order = generateOrder();
 
-        option1 = document.querySelector(`#option${order[0]}`)
+        valueOption1 = document.querySelector(`#option${order[0]}`)
 
-        option2 = document.querySelector(`#option${order[1]}`)
+        valueOption2 = document.querySelector(`#option${order[1]}`)
 
-        option3 = document.querySelector(`#option${order[2]}`)
+        valueOption3 = document.querySelector(`#option${order[2]}`)
 
-        option4 = document.querySelector(`#option${order[3]}`)
+        valueOption4 = document.querySelector(`#option${order[3]}`)
 
 
-        option1.innerHTML = data.opcao1;
+        valueOption1.innerHTML = data.opcao1;
 
-        option2.innerHTML = data.opcao2;
+        valueOption2.innerHTML = data.opcao2;
 
-        option3.innerHTML = data.opcao3;
+        valueOption3.innerHTML = data.opcao3;
 
-        option4.innerHTML = data.opcaoCorreta;
+        valueOption4.innerHTML = data.opcaoCorreta;
         
     }
 
@@ -74,23 +72,48 @@ function HistoriaMain() {
 
     //Função que mostra ao usuário se ele acertou a questão e o impossibilita de escolher um card que já foi
     //respondido
-    function isCorrectOption(id) {
+    function changeVisualCorrectOptions(id,idContainer) {
 
-        option1.parentNode.style.border = "5px solid red";
-        option2.parentNode.style.border = "5px solid red";
-        option3.parentNode.style.border = "5px solid red";
-        option4.parentNode.style.border = "5px solid green";
+        valueOption1.parentNode.style.border = "5px solid red";
+        valueOption2.parentNode.style.border = "5px solid red";
+        valueOption3.parentNode.style.border = "5px solid red";
+        valueOption4.parentNode.style.border = "5px solid green";
 
         document.getElementById(`card${id}`).style.backgroundImage = `url(${require('../../assets/cardRespondido.png')})`;
 
         document.getElementById(`card${id}`).style.pointerEvents = "none";
+
+        document.getElementById('containerOption1').style.pointerEvents = "none";
+
+        document.getElementById('containerOption2').style.pointerEvents = "none";
+
+        document.getElementById('containerOption3').style.pointerEvents = "none";
+        
+        document.getElementById('containerOption4').style.pointerEvents = "none";
+
+        setTimeout(()=> {
+            isOptionCorrect(idContainer);}
+      ,100);
+
+        
         
     }
 
+    function isOptionCorrect (idContainer) {
+        
+        let teste = document.getElementById(idContainer).firstElementChild.innerHTML;
+
+        if (teste === valueOption4.innerHTML) {window.alert("Parabéns! Você acertou a pergunta!"); setScore(score += 1); localStorage.setItem("pontuacao",score)}
+        else {window.alert("Alternativa Incorreta! Não desista, tente a próxima pergunta!")}
+    }
+
+    
+
     return (
     <main className = {styles.container}>
-
-            
+    
+        <p className = {styles.showScore}>Score: {score} </p>
+        
         <ul className = {styles.list}> 
             <li id = "card1" className = {styles.listItem} 
 
@@ -251,19 +274,19 @@ function HistoriaMain() {
                     
 
                     <div className = {styles.containerOptions}>
-                        <div className = {styles.options} onClick = {() => {isCorrectOption(currentID)}}>
+                        <div className = {styles.options} id = "containerOption1" onClick = {() => {changeVisualCorrectOptions(currentID,document.getElementById("containerOption1").id)}}>
                             <p className = {styles.optionsText} id = "option1"></p>
                         </div>
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
+                        <div className = {styles.options} id = "containerOption2" onClick = {() => {changeVisualCorrectOptions(currentID,document.getElementById("containerOption2").id)}}>
                             <p className = {styles.optionsText} id = "option2"></p>
                         </div>  
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
+                        <div className = {styles.options} id = "containerOption3" onClick = {() => {changeVisualCorrectOptions(currentID,document.getElementById("containerOption3").id)}}>
                             <p className = {styles.optionsText} id = "option3"></p>
                         </div>
 
-                        <div className = {styles.options} onClick = {() => isCorrectOption(currentID)}>
+                        <div className = {styles.options} id = "containerOption4" onClick = {() => {changeVisualCorrectOptions(currentID,document.getElementById("containerOption4").id)}}>
                             <p className = {styles.optionsText} id = "option4"></p>
                         </div>
                     </div>
