@@ -12,7 +12,7 @@ function FisicaMain() {
     function consumindoAPI (id) {
         fetch(`${baseURL}/questions`)
     .then(response => response.json())
-    .then(json => setQuestions(json,id))
+    .then(json => setQuestions(json,id-1))
     .catch(error => console.log(error))
     }
 
@@ -20,11 +20,12 @@ function FisicaMain() {
     //Função que atribui as perguntas aos cards
     const setQuestions = (data,id) => {
         
+        let filterQuestions = data.filter((e) => e.disciplina === "Fisica")
         currentID = id;
 
-        document.querySelector(`#tituloPergunta`).innerHTML = data[id].titulo;
+        document.querySelector(`#tituloPergunta`).innerHTML = filterQuestions[id].titulo;
 
-        orderOptions(data[id]);
+        orderOptions(filterQuestions[id]);
 
     }
 
@@ -79,9 +80,9 @@ function FisicaMain() {
         valueOption3.parentNode.style.border = "5px solid red";
         valueOption4.parentNode.style.border = "5px solid green";
 
-        document.getElementById(`card${id}`).style.backgroundImage = `url(${require('../../assets/cardRespondido.png')})`;
+        document.getElementById(`card${id+1}`).style.backgroundImage = `url(${require('../../assets/cardRespondido.png')})`;
 
-        document.getElementById(`card${id}`).style.pointerEvents = "none";
+        document.getElementById(`card${id+1}`).style.pointerEvents = "none";
 
         document.getElementById('containerOption1').style.pointerEvents = "none";
 
