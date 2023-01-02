@@ -2,7 +2,7 @@ import styles from "./HomeMain.module.css"
 import {useState} from "react";
 import { Link } from "react-router-dom";
 
-const temas = ['História','Geografia','Português', 'Matemática','Física','Química','Filosofia','Sociologia'];
+const temas = ['História','Geografia', 'Matemática','Física'];
 var path = "";
 
 
