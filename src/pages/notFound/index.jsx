@@ -1,7 +1,7 @@
-import React from 'react'
+import styles from './notfound.module.css'
 
 export default function NotFound() {
   return (
-    <div>Ops, pagina nao encontrada</div>
+    <div className={styles.container}>Ops, pagina nao encontrada</div>
   )
 }

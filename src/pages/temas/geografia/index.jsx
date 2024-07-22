@@ -1,7 +1,7 @@
-import React from 'react'
+import styles from './geografia.module.css'
 
 export default function Geografia() {
   return (
-    <div>Geografia</div>
+    <div className={styles.container}>Geografia</div>
   )
 }

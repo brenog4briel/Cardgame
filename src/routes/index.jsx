@@ -5,6 +5,7 @@ import Matematica from "../pages/temas/matematica";
 import Geografia from "../pages/temas/geografia";
 import Historia from "../pages/temas/historia";
 import NotFound from "../pages/notFound";
+import Home from "../pages/home";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
         path:"/",
         children:
         [
+            {
+                element:<Home/>,
+                path:"/"
+            },
             {
                 element:<Fisica/>,
                 path:"/disciplina/fisica"

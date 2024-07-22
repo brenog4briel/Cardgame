@@ -1,7 +1,7 @@
-import React from 'react'
+import styles from "./fisica.module.css"
 
 export default function Fisica() {
   return (
-    <div>Fisica</div>
+    <div className={styles.container}>Fisica</div>
   )
 }

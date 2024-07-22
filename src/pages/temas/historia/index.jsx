@@ -1,7 +1,7 @@
-import React from 'react'
+import styles from "./historia.module.css"
 
 export default function Historia() {
   return (
-    <div>Historia</div>
+    <div className={styles.container}>Historia</div>
   )
 }
