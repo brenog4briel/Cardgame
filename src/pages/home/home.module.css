@@ -1,7 +1,10 @@
-.container {
-    display: flex;
+.content {
+    display: inherit;
     flex-direction: column;
-    background-color: white;
-    width: 100%;
-    min-height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #eeeeee;
 }

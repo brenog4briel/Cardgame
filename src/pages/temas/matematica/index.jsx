@@ -1,7 +1,12 @@
-import styles from "./matematica.module.css"
+import Wrapper from "../../../components/wrapper"
+import MainContainer from "../../../components/MainContainer"
 
 export default function Matematica() {
   return (
-    <div className={styles.container}>Matematica</div>
+    <MainContainer>
+      <Wrapper>
+        
+      </Wrapper>
+    </MainContainer>
   )
 }

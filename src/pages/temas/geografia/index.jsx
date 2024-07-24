@@ -1,7 +1,12 @@
-import styles from './geografia.module.css'
+import Wrapper from '../../../components/wrapper'
+import MainContainer from '../../../components/MainContainer'
 
 export default function Geografia() {
   return (
-    <div className={styles.container}>Geografia</div>
+    <MainContainer>
+      <Wrapper>
+        
+      </Wrapper>
+    </MainContainer>
   )
 }

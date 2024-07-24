@@ -1,7 +1,12 @@
-import styles from "./fisica.module.css"
+import Wrapper from "../../../components/wrapper"
+import MainContainer from "../../../components/MainContainer"
 
 export default function Fisica() {
   return (
-    <div className={styles.container}>Fisica</div>
+    <MainContainer>
+      <Wrapper>
+        
+      </Wrapper>
+    </MainContainer>
   )
 }

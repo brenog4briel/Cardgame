@@ -1,7 +1,12 @@
-import styles from "./historia.module.css"
+import Wrapper from "../../../components/wrapper"
+import MainContainer from "../../../components/MainContainer"
 
 export default function Historia() {
   return (
-    <div className={styles.container}>Historia</div>
+    <MainContainer>
+      <Wrapper>
+        
+      </Wrapper>
+    </MainContainer>
   )
 }
