@@ -1,11 +1,38 @@
 import Wrapper from "../../../components/wrapper"
 import MainContainer from "../../../components/MainContainer"
+import AxiosInstance from "../../../axiosInstance"
+import { useEffect, useState } from "react"
+import GridContainer from "../../../components/gridContainer"
+import GridElement from "../../../components/gridElement"
+import backgroundImage from "../../../assets/background/matematica.jpg"
+import cardImage from "../../../assets/card/matematica.jpg"
 
 export default function Matematica() {
+
+  const [data,setData] = useState([])
+
+  const fetchData = async() => {
+    AxiosInstance.get("/matematica")
+    .then((res) => {
+      setData(res.data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
   return (
-    <MainContainer>
+    <MainContainer image={backgroundImage}>
       <Wrapper>
-        
+        <GridContainer>
+          {data.map((_,index) => (
+            <GridElement key={index} image={cardImage}></GridElement>
+          ))}
+        </GridContainer>
       </Wrapper>
     </MainContainer>
   )

@@ -1,0 +1,11 @@
+.container {
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .1s ease-out;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.container:hover {
+    transform: scale(1.03);
+}
