@@ -6,6 +6,8 @@ import Geografia from "../pages/temas/geografia";
 import Historia from "../pages/temas/historia";
 import NotFound from "../pages/notFound";
 import Home from "../pages/home";
+import Quimica from "../pages/temas/quimica";
+import Portugues from "../pages/temas/portugues";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
             {
                 element:<Geografia/>,
                 path:"/disciplina/geografia"
+            },
+            {
+                element:<Quimica/>,
+                path:"/disciplina/quimica"
+            },
+            {
+                element:<Portugues/>,
+                path:"/disciplina/portugues"
             },
         ]
     },

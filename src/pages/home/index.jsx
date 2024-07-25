@@ -35,6 +35,8 @@ export default function Home() {
               <MenuItem value="matematica">Matemática</MenuItem>
               <MenuItem value="historia">Historia</MenuItem>
               <MenuItem value="geografia">Geografia</MenuItem>
+              <MenuItem value="portugues">Português</MenuItem>
+              <MenuItem value="quimica">Química</MenuItem>
             </Select>
           </FormControl>
           <Button variant="contained" sx={{backgroundColor:"green","&:hover":{backgroundColor:"green"}}} onClick={() => navigate(`/disciplina/${tema}`)}>Selecionar</Button>
