@@ -7,7 +7,7 @@ import MainContainer from "../../components/MainContainer";
 
 export default function Home() {
 
-  const [tema,setTema] = useState("");
+  const [tema,setTema] = useState("fisica");
   const navigate = useNavigate()
 
   const handleChangeTema = (e) => {

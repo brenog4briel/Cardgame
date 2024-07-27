@@ -6,10 +6,13 @@ import GridContainer from "../../../components/gridContainer"
 import GridElement from "../../../components/gridElement"
 import backgroundImage from "../../../assets/background/matematica.jpg"
 import cardImage from "../../../assets/card/matematica.jpg"
+import Question from "../../../components/question/index"
 
 export default function Matematica() {
 
   const [data,setData] = useState([])
+  const [isModalOpen,setIsModalOpen] = useState(false)
+  const [question,setQuestion] = useState({})
 
   const fetchData = async() => {
     AxiosInstance.get("/matematica")
@@ -21,6 +24,12 @@ export default function Matematica() {
     })
   }
 
+  const handleModal = (id) => {
+    const tmpQuestion =  data.filter((e,index) => index === id)
+    setQuestion(tmpQuestion[0])
+    setIsModalOpen(oldValue => !oldValue)
+  }
+
   useEffect(() => {
     fetchData()
   },[])
@@ -28,11 +37,13 @@ export default function Matematica() {
   return (
     <MainContainer image={backgroundImage}>
       <Wrapper>
+        {isModalOpen ? <Question data={question} handleModal={handleModal}/> :
         <GridContainer>
-          {data.map((_,index) => (
-            <GridElement key={index} image={cardImage}></GridElement>
-          ))}
+            {data.map((_,index) => (
+              <GridElement key={index} image={cardImage} handleModal={() => handleModal(index)}></GridElement>
+            ))}
         </GridContainer>
+        }
       </Wrapper>
     </MainContainer>
   )

@@ -2,11 +2,13 @@ import BackIcon from "../backIcon"
 import styles from "./question.module.css"
 
 export default function Question({data,handleModal}) {
+
   return (
     <div className={styles.container}>
 
+      <BackIcon handleModal={handleModal}/>
+
       <div className={styles.title}>
-        <BackIcon handleModal={handleModal}/>
         <h3>{data.titulo}</h3>
       </div>
 
