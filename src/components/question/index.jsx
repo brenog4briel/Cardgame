@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import BackIcon from "../backIcon"
 import styles from "./question.module.css"
 import Popup from "../popup"
+import { ScoreContext } from "../../contexts/ScoreContext"
 
 export default function Question({data,handleModal}) {
 
   const tmp = Object.entries(data)
   const aux = tmp.slice(1,5)
+  const {AddScore} = useContext(ScoreContext)
   const [order,setOrder] = useState([]);
   const [isAnswered,setIsAnswered] = useState(false)
   const [activePopUp,setActivePopUp] = useState(false)
@@ -26,23 +28,30 @@ export default function Question({data,handleModal}) {
     orderGenerator()
   },[])
 
+  const closeModal = () => {
+    setTimeout(() => {
+      handleModal()
+    },[2500])
+  }
+
   const isCorrectOption = (value) => {
     setIsAnswered(oldValue => !oldValue)
     if (value === "opcaoCorreta") {
       setPopUpMessage("Resposta correta! Muito bem")
       setActivePopUp(true)
+      AddScore();
+      closeModal()
+      
     }
     else {
       setPopUpMessage("Resposta incorreta! Tente novamente")
       setActivePopUp(true)
-
+      closeModal()
     }
   }
 
   return (
     <div className={styles.container}>
-
-      <BackIcon handleModal={handleModal}/>
 
       <div className={styles.title}>
         <h3>{data.titulo}</h3>
@@ -50,7 +59,7 @@ export default function Question({data,handleModal}) {
       
       <div className={styles.grid_container}>
         {order.map((e) => (
-        <div key={e[0]} className={styles.grid_element}  style={{border: (e[0] === "opcaoCorreta" && isAnswered) ? "3px solid green" : "none"}} onClick={() => isCorrectOption(e[0])}>
+        <div key={e[0]} className={styles.grid_element}  style={{border: (e[0] === "opcaoCorreta" && isAnswered) ? "3px solid green" : (e[0] !== "opcaoCorreta" && isAnswered) ? "3px solid red" : "none"}} onClick={() => isCorrectOption(e[0])}>
           <p>{e[1]}</p>
         </div>
         ))}

@@ -1,10 +1,15 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
+import ScoreProvider from "./contexts/ScoreProvider";
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}/>
+      <ScoreProvider>
+        <RouterProvider router={router}>
+
+        </RouterProvider>
+      </ScoreProvider>
     </>  
   );
 }
