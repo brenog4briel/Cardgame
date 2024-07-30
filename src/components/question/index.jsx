@@ -4,7 +4,7 @@ import styles from "./question.module.css"
 import Popup from "../popup"
 import { ScoreContext } from "../../contexts/ScoreContext"
 
-export default function Question({data,handleModal}) {
+export default function Question({data,handleOutModal}) {
 
   const tmp = Object.entries(data)
   const aux = tmp.slice(1,5)
@@ -31,7 +31,7 @@ export default function Question({data,handleModal}) {
 
   const closeModal = () => {
     setTimeout(() => {
-      handleModal()
+      handleOutModal()
     },[2500])
   }
 

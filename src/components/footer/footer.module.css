@@ -4,4 +4,6 @@
     justify-content: center;
     height: 100px;
     background-color: #dddddd;
+    flex-wrap: wrap;
+    text-align: center;
 }

@@ -7,11 +7,12 @@ export default function ScoreProvider({children}) {
     const [username,setUsername] = useState("")
 
     const AddScore = () => {
-        setScore(oldScore => oldScore + 1);
+      setScore(oldScore => oldScore + 1);
     }
 
     const handleUsername = (name) => {
       setUsername(name)
+      sessionStorage.setItem("username",name)
     }
 
   return (

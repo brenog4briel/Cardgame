@@ -17,7 +17,8 @@ export default function Home() {
   const handleChangeTema = (e) => {
     setTema(e.target.value)
   }
-  const {handleUsername,username} = useContext(ScoreContext)
+  const {handleUsername} = useContext(ScoreContext)
+  const username = sessionStorage.getItem("username")
 
   const handleClick = () => {
     handleUsername(name)
@@ -30,7 +31,7 @@ export default function Home() {
         <img src={logo} alt="logo" className={styles.logo}/>
 
         <div className={styles.content}>
-          <h2>{username ? "Selecione o tema que deseja ser testado" : "Digite o seu nickname"}</h2>
+          <h3>{username ? "Selecione o tema que deseja ser testado" : "Digite o seu nickname"}</h3>
             {username ? 
           <FormControl sx={{width:"50%"}}>
             <InputLabel id="temas">{username ? "Temas" : "Nickname"}</InputLabel>
@@ -40,6 +41,7 @@ export default function Home() {
               value={tema}
               label="Temas"
               onChange={handleChangeTema}
+              sx={{textAlign:"initial"}}
             >
               <MenuItem value="fisica">Física</MenuItem>
               <MenuItem value="matematica">Matemática</MenuItem>

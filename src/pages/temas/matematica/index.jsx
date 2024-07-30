@@ -26,13 +26,19 @@ export default function Matematica() {
     })
   }
 
-  const handleModal = (id) => {
-    const tmpQuestion =  data.filter((e,index) => index === id)
+  const handleInModal = (id) => {
+    const aux = [...data]
+    const tmpQuestion =  aux.filter((e,index) => index === id)
     setQuestion(tmpQuestion[0])
     setIsModalOpen(oldValue => !oldValue)
-    let tmp = [...data];
+    const tmp = [...data]
     tmp[id].respondida = true;
     setData(tmp)
+    
+  }
+
+  const handleOutModal = () => {
+    setIsModalOpen(oldValue => !oldValue)
   }
 
   useEffect(() => {
@@ -43,10 +49,14 @@ export default function Matematica() {
     <MainContainer image={backgroundImage}>
       <Wrapper>
         <BackIcon/>
-        {isModalOpen ? <Question data={question} handleModal={handleModal}/> :
+        {isModalOpen ? <Question data={question} handleInModal={handleInModal} handleOutModal={handleOutModal}/> :
         <GridContainer>
             {data.map((e,index) => (
-              <GridElement key={index} image={e.respondida ? cardRespondido: cardImage} handleModal={e.respondida ? {} : () => handleModal(index)}></GridElement>
+              e.respondida ? 
+              <GridElement key={index} image={e.respondida ? cardRespondido: cardImage}></GridElement>
+              :
+              <GridElement key={index} image={e.respondida ? cardRespondido: cardImage} handleModal={() => handleInModal(index)}></GridElement> 
+              
             ))}
         </GridContainer>
         }

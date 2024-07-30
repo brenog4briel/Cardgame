@@ -11,7 +11,9 @@
             {"titulo":"A turma de Mariana na escola tem 23 alunos dos quais 11 são meninos. A razão entre o número de meninos e meninas na turma de Mariana é","opcao1":"12/23", "opcao2": "12/11", "opcao3": "11/23", "opcaoCorreta": "11/12","respondida":false},
             {"titulo":"Se um veículo possuí autonomia de 12 km com um litro de combustível, com 23 litros, este veículo poderá percorrer, sem parar para abastecer","opcao1":"120 km", "opcao2": "113 km", "opcao3": "156 km", "opcaoCorreta": "276 km","respondida":false},
             {"titulo":"Em uma confecção seis costureiras produzem 1200 peças em três dias de trabalho. O número de peças produzidas por oito costureiras em nove dias será de","opcao1":"2800 peças", "opcao2": "5800 peças", "opcao3": "3600 peças", "opcaoCorreta": "4800 peças","respondida":false},
-            {"titulo":"Em relação aos sólidos geométricos, assinale a afirmativa verdadeira","opcao1":"Prismas são figuras com duas bases diferentes", "opcao2": "O cone é um poliedro", "opcao3": "Pirâmide não é um poliedro", "opcaoCorreta": "O cubo é um poliedro com todos os lados iguais","respondida":false}
+            {"titulo":"Em relação aos sólidos geométricos, assinale a afirmativa verdadeira","opcao1":"Prismas são figuras com duas bases diferentes", "opcao2": "O cone é um poliedro", "opcao3": "Pirâmide não é um poliedro", "opcaoCorreta": "O cubo é um poliedro com todos os lados iguais","respondida":false},
+            {"titulo":"Numa progressão aritmética de razão r e primeiro termo 3, a soma dos primeiros n termos é 3n², logo, a razão é:","opcao1":"7", "opcao2": "3", "opcao3": "2", "opcaoCorreta": "6","respondida":false},
+            {"titulo":"Se (a1, a2,…, a13) é uma progressão aritmética (P.A) cuja soma dos termos é igual a 78, então a7 é igual a","opcao1":"9", "opcao2": "8", "opcao3": "7", "opcaoCorreta": "6","respondida":false}
         ],
         
     "fisica":
@@ -25,7 +27,9 @@
             {"titulo":"Quanto tempo, aproximadamente, uma fruta que caiu de uma árvore, localizada a uma altura de 25 m leva para para tocar o chão? Despreze a resistência do ar e considere g = 10 m/s2.","opcao1":"5,0 s", "opcao2": "4,45 s", "opcao3": "3,0 s", "opcaoCorreta": "2,24 s","respondida":false},
             {"titulo":"Desprezando a resistência do ar, se um vaso que estava em cima de uma sacada caiu, levando 2 segundos para chegar ao chão, a que altura o objeto estava? Considere g = 10 m/s2.","opcao1":"40 m", "opcao2": "30 m", "opcao3": "10 m", "opcaoCorreta": "20 m","respondida":false},
             {"titulo":"Uma bola de boliche foi abandonada de uma sacada, a 80 metros do chão, e adquiriu um movimento de queda livre. A que altura a bola estava após 2 segundos?","opcao1":"10 m", "opcao2": "20 m", "opcao3": "40 m", "opcaoCorreta": "60 m","respondida":false},
-            {"titulo":"Um corpo em queda livre percorre uma certa distância vertical em 2s; logo, a distância percorrida 6 s será","opcao1":"dupla", "opcao2": "Seis vezes maior", "opcao3": "Doze vezes maior", "opcaoCorreta": "Nove vezes maior","respondida":false}
+            {"titulo":"Um corpo em queda livre percorre uma certa distância vertical em 2s; logo, a distância percorrida 6 s será","opcao1":"dupla", "opcao2": "Seis vezes maior", "opcao3": "Doze vezes maior", "opcaoCorreta": "Nove vezes maior","respondida":false},
+            {"titulo":"Entre as afirmativas a seguir, a respeito de fenômenos ondulatórios, assinale a que é FALSA","opcao1":"A velocidade do som no ar independe da frequência", "opcao2": "Ondas sonoras não podem ser polarizadas", "opcao3": "Ondas sonoras são longitudinais", "opcaoCorreta": "No vácuo, todas as ondas eletromagnéticas possuem o mesmo período","respondida":false},
+            {"titulo":"Com base em seus estudos a respeito da lei da gravitação universal, qual dos cientistas abaixo foi o responsável pela sua formulação?","opcao1":"Giordano Bruno", "opcao2": "Johannes Kepler", "opcao3": "Galileu Galilei", "opcaoCorreta": "Isaac Newton","respondida":false}
         ],
         
     "historia":
@@ -39,7 +43,9 @@
             {"titulo":"Qual era o nome do grupo terrorista Sérvio contratado para Matar o arqueduque Francisco Ferdinando?","opcao1":"Mão Suja", "opcao2": "Os servianos", "opcao3": "Bósnia livre", "opcaoCorreta": "Mão Negra","respondida":false},
             {"titulo":"Em qual ano se iniciou a guerra?","opcao1":"1918", "opcao2": "1928", "opcao3": "1911", "opcaoCorreta": "1914","respondida":false},
             {"titulo":"O estopim da guerra foi a morte do ___ austríaco.","opcao1":"Diplomata", "opcao2": "General", "opcao3": "Ministro", "opcaoCorreta": "Arqueduque","respondida":false},
-            {"titulo":"Selecione a opção em que todos os países tenham participado da Primeira Guerra Mundial","opcao1":"Alemanha, Brasil, Estados Unidos e Russia", "opcao2": "Estados Unidos, Russia, Alemanha, França e Inglaterra", "opcao3": "Brasil, Itália, Império Austro-Hungaro e Russia", "opcaoCorreta": "Alemanha, Itália, Império Austro-Hungaro e Inglaterra","respondida":false}
+            {"titulo":"Selecione a opção em que todos os países tenham participado da Primeira Guerra Mundial","opcao1":"Alemanha, Brasil, Estados Unidos e Russia", "opcao2": "Estados Unidos, Russia, Alemanha, França e Inglaterra", "opcao3": "Brasil, Itália, Império Austro-Hungaro e Russia", "opcaoCorreta": "Alemanha, Itália, Império Austro-Hungaro e Inglaterra","respondida":false},
+            {"titulo":"Qual das alternativas a seguir traz o nome REAL da operação que marcou a ofensiva dos alemães nas Ardenas","opcao1":"Vigilância do Reno", "opcao2": "Ofensiva Siegfried", "opcao3": "Operação Rommel", "opcaoCorreta": "Névoa de Outono","respondida":false},
+            {"titulo":"A Conferência de Berlim foi organizada por qual governante?","opcao1":"Leopoldo II", "opcao2": "Leopoldo I", "opcao3": "Chester A. Arthur", "opcaoCorreta": "Otto von Bismarck","respondida":false}
         ],
         
     "geografia":
@@ -53,7 +59,9 @@
             {"titulo":"Assinale a alternativa que aponta uma característica encontrada no núcleo","opcao1":"Existência apenas de camadas líquidas", "opcao2": "Diminuta umidade relativa do ar", "opcao3": "Existência de grandes volumes de lava", "opcaoCorreta": "Ocorrência de elevadas temperaturas","respondida":false},
             {"titulo":"O estado mais pastoso das rochas encontradas no manto são o resultado, dentre outros, da","opcao1":"Presença de minerais diversos de fácil combustão", "opcao2": "Deusa devoradora dos pecadores", "opcao3": "Ocorrência de movimentos tectônicos na litosfera", "opcaoCorreta": "Influência das elevadas temperaturas do núcleo","respondida":false},
             {"titulo":"O núcleo terrestre atua na dinâmica do planeta por meio da","opcao1":"Acentuação do movimento de translação realizado pela esfera planetária", "opcao2": "Diminuição da pressão encontrada no interior das camadas terrestres", "opcao3": "Modificação da crosta terrestre pelo movimento de tectonismo", "opcaoCorreta": "Produção de altas temperaturas que influenciam na composição terrestre","respondida":false},
-            {"titulo":"A camada mais externa do planeta, formada principalmente por estruturas rochosas, é corretamente chamada de","opcao1":"Atmosfera", "opcao2": "Geosfera", "opcao3": "Astenosfera", "opcaoCorreta": "Litosfera","respondida":false}
+            {"titulo":"A camada mais externa do planeta, formada principalmente por estruturas rochosas, é corretamente chamada de","opcao1":"Atmosfera", "opcao2": "Geosfera", "opcao3": "Astenosfera", "opcaoCorreta": "Litosfera","respondida":false},
+            {"titulo":"A principal atividade econômica na Antártida é:","opcao1":"Extração de petróleo", "opcao2": "Agricultura", "opcao3": "Turismo", "opcaoCorreta": "Pesca","respondida":false},
+            {"titulo":"Marque a alternativa que indica, corretamente, o Hemisfério das nações situadas ao sul da Linha do Equador.","opcao1":"Hemisfério Setentrional", "opcao2": "Hemisfério Ocidental", "opcao3": "Hemisfério Oriental", "opcaoCorreta": "Hemisfério Meridional","respondida":false}
         ],
     "portugues":
         [
@@ -66,7 +74,9 @@
             {"titulo":"Quanto à organização sintático-semântica do fragmento 'Ninguém ama tanto a vida como a pessoa que envelhece.', é correto afirmar:","opcao1":"As formas verbais “ama” e “envelhece” exigem complemento", "opcao2": "O conectivo “como” introduz oração que expressa ideia de conformidade", "opcao3": "Os termos “Ninguém” e “vida” exercem a mesma função sintática", "opcaoCorreta": "A oração “que envelhece” expressa ideia de restrição","respondida":false},
             {"titulo":"Marque a alternativa em que a oração é sem sujeito:","opcao1":"Alguém havia aberto a porta", "opcao2": "Ninguém fez nada ontem", "opcao3": "Existia um lápis ali na mesa", "opcaoCorreta": "Está muito frio hoje","respondida":false},
             {"titulo":"Empregou-se o verbo no futuro do subjuntivo em:","opcao1":"... afrontava os perigos (...) para vir vê-la à cidade", "opcao2": "Tinha-me esquecido de contar-lhe que eu fizera uma promessa...", "opcao3": "Continuaram ainda a dialogar com certo azedume", "opcaoCorreta": "Se algum dia a civilização ganhar essa paragem longínqua...","respondida":false},
-            {"titulo":"Uma das alternativas abaixo está errada quanto à correspondência no emprego dos tempos verbais. Assinale-a","opcao1":"Porque arrumara carona, chegou cedo à cidade", "opcao2": "Embora arrume carona, chegará tarde", "opcao3": "Embora tenha arrumado carona, chegou tarde", "opcaoCorreta": "Se arrumar carona, chegaria cedo à cidade","respondida":false}
+            {"titulo":"Uma das alternativas abaixo está errada quanto à correspondência no emprego dos tempos verbais. Assinale-a","opcao1":"Porque arrumara carona, chegou cedo à cidade", "opcao2": "Embora arrume carona, chegará tarde", "opcao3": "Embora tenha arrumado carona, chegou tarde", "opcaoCorreta": "Se arrumar carona, chegaria cedo à cidade","respondida":false},
+            {"titulo":"Assinale a alternativa que possui um substantivo comum, simples, concreto e primitivo:","opcao1":"casebre", "opcao2": "girassol", "opcao3": "honestidade", "opcaoCorreta": "menina","respondida":false},
+            {"titulo":"Assinale a única alternativa na qual todas as palavras receberam o acento gráfico adequadamente:","opcao1":"idéia, horário", "opcao2": "feiúra, Sauípe", "opcao3": "balaústre, baiúca", "opcaoCorreta": "herói, bênção","respondida":false}
         ],
      "quimica":
         [
@@ -79,6 +89,8 @@
             {"titulo":"O hidrocarboneto que apresenta a menor quantidade de átomos de H por molécula é","opcao1":"etano", "opcao2": "eteno", "opcao3": "propino", "opcaoCorreta": "etino","respondida":false},
             {"titulo":"Considerando-se as propriedades dos elementos químicos e a tabela periódica, é incorreto afirmar","opcao1":"um não metal é uma substância que não conduz a corrente elétrica, não é dúctil nem maleável", "opcao2": "um metal é uma substância que conduz a corrente elétrica, é dúctil e maleável", "opcao3": "os gases nobres são monoatômicos", "opcaoCorreta": "a maioria dos elementos químicos é constituída de ametais","respondida":false},
             {"titulo":"O elemento químico com Z = 54 possui em sua camada de valência a configuração 5s2 5p6. Os elementos com Z = 52 e com Z = 56 pertencem às famílias dos","opcao1":"calcogênios e alcalinos", "opcao2": "halogênios e alcalinoterrosos", "opcao3": "halogênios e alcalinos", "opcaoCorreta": "calcogênios e alcalinoterrosos","respondida":false},
-            {"titulo":"O grupo da Tabela Periódica que se caracteriza por apresentar predominância de elementos artificiais é o dos","opcao1":"gases nobres", "opcao2": "metais de transição", "opcao3": "metais alcalinoterrosos", "opcaoCorreta": "actinídios","respondida":false}
+            {"titulo":"O grupo da Tabela Periódica que se caracteriza por apresentar predominância de elementos artificiais é o dos","opcao1":"gases nobres", "opcao2": "metais de transição", "opcao3": "metais alcalinoterrosos", "opcaoCorreta": "actinídios","respondida":false},
+            {"titulo":"No ânodo de uma célula de eletrólise sempre ocorre:","opcao1":"Semirreação de redução", "opcao2": "Formação de um polo negativo", "opcao3": "Formação de um líquido", "opcaoCorreta": "Corrosão química","respondida":false},
+            {"titulo":"Dados os seguintes sais, marque a alternativa que apresenta um sal classificado como sal alúmen.","opcao1":"Na2CO3", "opcao2": "LiNH4S", "opcao3": "CaCl2.2H2O", "opcaoCorreta": "Au2SO4.Fe2(SO4)3.24H2O","respondida":false}
         ]
 }

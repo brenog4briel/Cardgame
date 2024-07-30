@@ -2,8 +2,9 @@ import { useContext } from "react"
 import styles from "./header.module.css"
 import { ScoreContext } from "../../contexts/ScoreContext"
 export default function Header() {
-
-  const {username,score} = useContext(ScoreContext)
+  
+  const {score} = useContext(ScoreContext)
+  const username = sessionStorage.getItem("username")
 
   return (
     <header className={styles.container}>
