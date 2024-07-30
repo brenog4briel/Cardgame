@@ -10,8 +10,8 @@ export default function BackIcon() {
 
     return (
         <div onClick={() => navigate(-1)} className={styles.container}>
-            <IconButton>
-                <ArrowBackOutlinedIcon/>
+            <IconButton color='white' sx={{backgroundColor:"white","&:hover":{backgroundColor:"white"}}}>
+                <ArrowBackOutlinedIcon />
             </IconButton>
         </div>
     )

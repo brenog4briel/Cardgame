@@ -1,29 +1,39 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import styles from "./home.module.css"
-import { Button, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "../../components/wrapper";
 import MainContainer from "../../components/MainContainer";
+import logo from "../../assets/logo/logo.png"
+import { ScoreContext } from "../../contexts/ScoreContext";
 
 export default function Home() {
 
   const [tema,setTema] = useState("fisica");
+  const [name,setName] = useState("")
+
   const navigate = useNavigate()
 
   const handleChangeTema = (e) => {
     setTema(e.target.value)
+  }
+  const {handleUsername,username} = useContext(ScoreContext)
+
+  const handleClick = () => {
+    handleUsername(name)
   }
 
   return (
     <MainContainer>
       <Wrapper>
 
-        <h1>Cardgame</h1>
+        <img src={logo} alt="logo" className={styles.logo}/>
 
         <div className={styles.content}>
-          <h2>Selecione o tema que deseja ser testado</h2>
+          <h2>{username ? "Selecione o tema que deseja ser testado" : "Digite o seu nickname"}</h2>
+            {username ? 
           <FormControl sx={{width:"50%"}}>
-            <InputLabel id="temas">Temas</InputLabel>
+            <InputLabel id="temas">{username ? "Temas" : "Nickname"}</InputLabel>
             <Select
               labelId="temas"
               id="temas"
@@ -39,7 +49,17 @@ export default function Home() {
               <MenuItem value="quimica">Química</MenuItem>
             </Select>
           </FormControl>
-          <Button variant="contained" sx={{backgroundColor:"green","&:hover":{backgroundColor:"green"}}} onClick={() => navigate(`/disciplina/${tema}`)}>Selecionar</Button>
+          :
+            <FormControl sx={{ width: "50%" }}>
+                  <TextField
+                    type="text"
+                    variant="outlined"
+                    label="Nickname"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </FormControl>
+          }
+          <Button variant="contained" sx={{backgroundColor:"green","&:hover":{backgroundColor:"green"}}} onClick={username ? () => navigate(`/disciplina/${tema}`) : handleClick}>{username ? "Selecionar" : "Escolher"}</Button>
         </div>
         
       </Wrapper>

@@ -14,3 +14,6 @@
     align-items: center;
     width: 100%;
 }
+.title {
+    letter-spacing: 5px;
+}

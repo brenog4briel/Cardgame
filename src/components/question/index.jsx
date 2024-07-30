@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import BackIcon from "../backIcon"
+// import BackIcon from "../backIcon"
 import styles from "./question.module.css"
 import Popup from "../popup"
 import { ScoreContext } from "../../contexts/ScoreContext"
@@ -13,6 +13,7 @@ export default function Question({data,handleModal}) {
   const [isAnswered,setIsAnswered] = useState(false)
   const [activePopUp,setActivePopUp] = useState(false)
   const [popUpMessage,setPopUpMessage] = useState("")
+  const [isCorrect,setIsCorrect] = useState(false)
 
   const orderGenerator = () => {
     let arr = [...aux]
@@ -37,6 +38,7 @@ export default function Question({data,handleModal}) {
   const isCorrectOption = (value) => {
     setIsAnswered(oldValue => !oldValue)
     if (value === "opcaoCorreta") {
+      setIsCorrect(true)
       setPopUpMessage("Resposta correta! Muito bem")
       setActivePopUp(true)
       AddScore();
@@ -44,6 +46,7 @@ export default function Question({data,handleModal}) {
       
     }
     else {
+      setIsCorrect(false)
       setPopUpMessage("Resposta incorreta! Tente novamente")
       setActivePopUp(true)
       closeModal()
@@ -64,7 +67,7 @@ export default function Question({data,handleModal}) {
         </div>
         ))}
       </div>
-      {activePopUp && <Popup mensagem={popUpMessage}/>}
+      {activePopUp && <Popup mensagem={popUpMessage} isCorrect={isCorrect}/>}
     </div>
   )
 }

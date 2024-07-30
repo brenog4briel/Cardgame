@@ -6,7 +6,9 @@ import GridContainer from "../../../components/gridContainer"
 import GridElement from "../../../components/gridElement"
 import backgroundImage from "../../../assets/background/fisica.jpg"
 import cardImage from "../../../assets/card/fisica.jpg"
+import cardRespondido from "../../../assets/card/respondido.jpg"
 import Question from "../../../components/question/index"
+import BackIcon from "../../../components/backIcon"
 
 export default function Fisica() {
 
@@ -28,6 +30,9 @@ export default function Fisica() {
     const tmpQuestion =  data.filter((e,index) => index === id)
     setQuestion(tmpQuestion[0])
     setIsModalOpen(oldValue => !oldValue)
+    let tmp = [...data];
+    console.log(tmp)
+    setData(tmp)
   }
 
   useEffect(() => {
@@ -37,10 +42,15 @@ export default function Fisica() {
   return (
     <MainContainer image={backgroundImage}>
       <Wrapper>
+        <BackIcon/>
         {isModalOpen ? <Question data={question} handleModal={handleModal}/> :
         <GridContainer>
-            {data.map((_,index) => (
-              <GridElement key={index} image={cardImage} handleModal={() => handleModal(index)}></GridElement>
+            {data.map((e,index) => (
+              e.respondida ? 
+              <GridElement key={index} image={e.respondida ? cardRespondido: cardImage}></GridElement>
+              :
+              <GridElement key={index} image={e.respondida ? cardRespondido: cardImage} handleModal={() => handleModal(index)}></GridElement> 
+              
             ))}
         </GridContainer>
         }
