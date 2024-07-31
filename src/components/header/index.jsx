@@ -8,11 +8,14 @@ export default function Header() {
 
   return (
     <header className={styles.container}>
-        <div className={styles.titles}>
+        <div className={styles.titles} style={{justifyContent: username ? "space-evenly":"center"}}>
           {username ? 
           <>
-          <h2>{username ? `Olá ${username}` : ""}</h2>
-          <h2>{`Total de acertos: ${score}`}</h2>
+          <h1 className={styles.title}>CARDGAME</h1>
+          <div className={styles.user_info}>
+            <h2>{username ? `Olá ${username}` : ""}</h2>
+            <h2>{`Total de acertos: ${score}`}</h2>
+          </div>
           </> : <h1 className={styles.title}>CARDGAME</h1>}
           
             

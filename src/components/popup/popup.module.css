@@ -25,3 +25,23 @@
         bottom: 100px;
     }
 }
+
+
+@media (width < 550px) {
+    .container {
+        width: 150px;
+        bottom: 50px;
+        right: 50px;
+        animation-duration: 2s;
+        animation-name: queda;
+    }
+
+    @keyframes queda {
+        from {
+        bottom: 1000px;
+    }
+        to {
+            bottom: 50px;
+        }
+    }
+}
