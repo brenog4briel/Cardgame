@@ -10,6 +10,7 @@ Este projeto foi desenvolvido utilizando React JS, Material UI e JSON-Server par
 * [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]([https://react.dev/])
 * [![Material UI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)]([https://mui.com/material-ui/)
 * O deploy foi realizado na Vercel - https://vercel.com/
+* Link de acesso da aplicação: https://cardgame-pearl.vercel.app/
 
 ## Início
 
